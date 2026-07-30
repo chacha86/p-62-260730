@@ -1,0 +1,27 @@
+package com.back.p_62_260730.domain.wiseSaying.entity;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration // 빈 등록용
+public class BaseInit {
+
+    @Bean
+    public Person getPerson() {
+        return new Person();
+    }
+
+//    @Bean
+//    public ApplicationRunner init() {
+//        return new MyApplicationRunner();
+//    }
+
+
+    @Bean
+    public ApplicationRunner init() {
+        return args -> {
+            System.out.println("초기 데이터를 로딩합니다.");
+        };
+    }
+}
