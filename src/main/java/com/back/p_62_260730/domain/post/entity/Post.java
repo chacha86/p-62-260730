@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Setter
 @Getter // 어노테이션. 표식(자바, 프레임워크, IDE)
 @Entity
@@ -16,9 +18,14 @@ public class Post {
     private int id; // int
     private String title; // varchar(255)
     private String body; // varchar(255)
+    private LocalDateTime createDate;
+    private LocalDateTime modifyDate;
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+        this.createDate = LocalDateTime.now();
+        this.modifyDate = createDate;
     }
+
 }
