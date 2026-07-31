@@ -1,7 +1,6 @@
 package com.back.p_62_260730.global;
 
-import com.back.p_62_260730.domain.post.entity.Post;
-import com.back.p_62_260730.domain.post.repository.PostRepository;
+import com.back.p_62_260730.domain.post.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class BaseInit {
 
     @Autowired
-    private PostRepository postRepository;
+    private PostService postService; // 창고관리인
 
     @Bean
     public ApplicationRunner init() {
@@ -24,19 +23,17 @@ public class BaseInit {
 
     void work1() {
 
-        if(postRepository.count() > 0) {
+        if(postService.count() > 0) {
             return;
         }
 
-        Post post1 = new Post("제목1", "내용1");
-        postRepository.save(post1);
+        postService.write("제목1", "내용1");
+        postService.write("제목2", "내용2");
 
-        Post post2 = new Post("제목2", "내용2");
-        postRepository.save(post2);
     }
 
     void work2() {
-        postRepository.findById(1);
+        postService.findById(1);
         // select * from post where id = 1;
     }
 }
