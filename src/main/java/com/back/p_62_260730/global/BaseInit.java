@@ -1,16 +1,16 @@
 package com.back.p_62_260730.global;
 
 import com.back.p_62_260730.domain.post.service.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration // 빈 등록용
+@RequiredArgsConstructor
 public class BaseInit {
 
-    @Autowired
-    private PostService postService; // 창고관리인
+    private final PostService postService;
 
     @Bean
     public ApplicationRunner init() {
