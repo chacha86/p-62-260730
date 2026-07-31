@@ -9,12 +9,16 @@ import lombok.*;
 @Setter
 @Getter // 어노테이션. 표식(자바, 프레임워크, IDE)
 @Entity
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // int
-    private String title; // varchar(255)
-    private String body; // varchar(255)
+    private final String title; // varchar(255)
+    private final String body; // varchar(255)
 
+    public Post() {
+        title = "";
+        body = "";
+    }
 }
