@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.Transactional;
 
 @Configuration // 빈 등록용
 @RequiredArgsConstructor
@@ -21,6 +22,8 @@ public class BaseInit {
         };
     }
 
+    // jpa -> jakarta, Transactional은 spring 패키지 사용
+    @Transactional
     void work1() {
 
         if(postService.count() > 0) {
@@ -32,6 +35,7 @@ public class BaseInit {
 
     }
 
+    @Transactional
     void work2() {
         postService.findById(1);
         // select * from post where id = 1;
