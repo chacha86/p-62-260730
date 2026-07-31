@@ -14,7 +14,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // int
-    private String content; // varchar(255)
-    private String author; // varchar(255)
+    private String title; // varchar(255)
+    private String body; // varchar(255)
 
 }
