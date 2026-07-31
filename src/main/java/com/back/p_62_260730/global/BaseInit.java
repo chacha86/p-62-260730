@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Configuration // 빈 등록용
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class BaseInit {
 
     private final PostService postService;
@@ -35,6 +36,7 @@ public class BaseInit {
     }
 
     // jpa -> jakarta, Transactional은 spring 패키지 사용
+
     @Transactional
     void work1() {
 
@@ -47,7 +49,6 @@ public class BaseInit {
 
     }
 
-    @Transactional
     void work2() {
         postService.findById(1);
         // select * from post where id = 1;
