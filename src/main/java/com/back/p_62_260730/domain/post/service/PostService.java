@@ -17,6 +17,10 @@ public class PostService {
         return postRepository.save(post);
     }
 
+    public void delete(Post post) {
+        postRepository.delete(post);
+    }
+
     public Optional<Post> findById(int id) {
         return postRepository.findById(id); // 트랜잭션 시작 -> select * from post -> 트랜잭션 종료 -> 커밋
     }
