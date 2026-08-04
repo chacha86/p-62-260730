@@ -14,8 +14,10 @@ public class Post extends BaseEntity {
 
     private String title; // varchar(255)
     private String body; // varchar(255)
+    private int authorId; // 작성자 외래키
 
-    public Post(String title, String body) {
+    public Post(int authorId, String title, String body) {
+        this.authorId = authorId;
         this.title = title;
         this.body = body;
     }

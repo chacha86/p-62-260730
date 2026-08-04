@@ -12,8 +12,8 @@ import java.util.Optional;
 public class PostService {
     private final PostRepository postRepository;
 
-    public Post write(String title, String body) {
-        Post post = new Post(title, body);
+    public Post write(int authorId, String title, String body) {
+        Post post = new Post(authorId, title, body);
         return postRepository.save(post);
     }
 
