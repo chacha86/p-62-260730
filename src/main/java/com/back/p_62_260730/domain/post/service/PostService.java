@@ -5,7 +5,6 @@ import com.back.p_62_260730.domain.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -19,11 +18,7 @@ public class PostService {
     }
 
     public void modify(Post post, String title, String body) {
-        post.setTitle(title);
-        post.setBody(body);
-        post.setModifyDate(LocalDateTime.now());
-
-        postRepository.save(post);
+        post.modify(title, body);
     }
 
     public void delete(Post post) {
