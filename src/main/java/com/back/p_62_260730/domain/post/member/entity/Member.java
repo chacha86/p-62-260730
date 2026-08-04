@@ -1,0 +1,21 @@
+package com.back.p_62_260730.domain.post.member.entity;
+
+import com.back.p_62_260730.global.BaseEntity;
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Member extends BaseEntity {
+    private String username; // 식별용 ID(로그인 ID)
+    private String nickname; // 활동 닉네임
+
+    public Member(String username, String nickname) {
+        this.username = username;
+        this.nickname = nickname;
+    }
+}

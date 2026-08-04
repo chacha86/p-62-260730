@@ -1,7 +1,7 @@
 package com.back.p_62_260730;
 
-import com.back.p_62_260730.domain.post.entity.Post;
-import com.back.p_62_260730.domain.post.repository.PostRepository;
+import com.back.p_62_260730.domain.post.post.entity.Post;
+import com.back.p_62_260730.domain.post.post.repository.PostRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

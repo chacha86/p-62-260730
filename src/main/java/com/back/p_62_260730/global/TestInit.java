@@ -1,6 +1,6 @@
 package com.back.p_62_260730.global;
 
-import com.back.p_62_260730.domain.post.service.PostService;
+import com.back.p_62_260730.domain.post.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
