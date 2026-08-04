@@ -8,17 +8,19 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.Transactional;
 
 @Configuration // 빈 등록용
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class BaseInit {
+@Profile("dev")
+public class DevBaseInit {
 
     private final PostService postService;
     @Lazy
     @Autowired
-    private BaseInit self;
+    private DevBaseInit self;
 
     @Bean
     public ApplicationRunner init() {
@@ -45,6 +47,9 @@ public class BaseInit {
         if(postService.count() > 0) {
             return;
         }
+
+        // 관리자 계정 만들기
+
 
         postService.write("제목1", "내용1");
         postService.write("제목2", "내용2");

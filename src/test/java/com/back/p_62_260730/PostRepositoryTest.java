@@ -25,8 +25,8 @@ public class PostRepositoryTest {
         Post post1 = postRepository.findById(2).get();
 
         assertThat(post1.getId()).isEqualTo(2);
-        assertThat(post1.getTitle()).isEqualTo("제목2");
-        assertThat(post1.getBody()).isEqualTo("내용2");
+        assertThat(post1.getTitle()).isEqualTo("테스트용 제목2");
+        assertThat(post1.getBody()).isEqualTo("테스트용 내용2");
 
     }
 
